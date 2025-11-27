@@ -1009,7 +1009,7 @@ function App() {
 
         {/* Card 3: Comparte como si fuera Instagram */}
         <div className="ft-social-card">
-          <h3 className="ft-social-title">Comparte como en tu “gymgram”</h3>
+          <h3 className="ft-social-title">Comparte tus logros</h3>
 
           <div className="ft-social-post">
             <div className="ft-social-post-header">
