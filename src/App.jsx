@@ -631,7 +631,7 @@ function App() {
             <p className="ft-tag">Fitness · Nutrición · Social</p>
             <h1>
               Una sola app para
-              <span> entrenar, comer y conectar</span>.
+              <span> entrenar, gestionar tu nutrición y conectar</span>.
             </h1>
             <p className="ft-hero-sub">
               Fitera diseña tu día según tu cuerpo, tu objetivo y tu agenda. Tú
