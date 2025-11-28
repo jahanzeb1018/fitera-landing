@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 import logo from "./assets/fitera-logo.png"; // ajusta el nombre si es distinto
-
+import { Analytics } from "@vercel/analytics/react"
 
 /* --- PLAN SHOWCASE (Opción C completa) --- */
 function PlanShowcase() {
@@ -1096,6 +1096,7 @@ function App() {
       <footer className="ft-footer">
         <span>© {new Date().getFullYear()} Fitera</span>
       </footer>
+      <Analytics />
     </div>
   );
 }
