@@ -552,6 +552,34 @@ function App() {
   const currentScan = scanSteps[scanStep];
 
   const [feature, setFeature] = useState("routines");
+    const [aiFocus, setAiFocus] = useState("workout");
+
+  const aiDetails = {
+    workout: {
+      title: "Cómo usamos IA en tus entrenos",
+      bullets: [
+        "Calcula volumen y días según tu objetivo.",
+        "Sugiere ejercicios, series y repeticiones.",
+        "Te deja editar todo antes de guardarlo."
+      ],
+    },
+    food: {
+      title: "Cómo usamos IA en tu comida",
+      bullets: [
+        "Reconoce tu plato a partir de una foto.",
+        "Estima ración, kcal y macros principales.",
+        "Encaja la comida dentro de tu día."
+      ],
+    },
+    adapt: {
+      title: "Cómo aprende de ti",
+      bullets: [
+        "Tiene en cuenta lo que completas y lo que no.",
+        "Ajusta carga y frecuencia con el tiempo.",
+        "Respeta siempre los límites que tú marques."
+      ],
+    },
+  };
 
   const featureConfig = {
     routines: {
@@ -608,6 +636,7 @@ function App() {
           <nav className="ft-nav-links">
             <a href="#top">Inicio</a>
             <a href="#scan">Diagnóstico</a>
+            <a href="#ai">IA</a> 
             <a href="#plan">Plan</a>
             <a href="#sim">Funcionalidades</a>
             <a href="#social">Social</a>
@@ -733,6 +762,96 @@ function App() {
             </motion.div>
           </div>
         </motion.section>
+
+{/* SECTION 3 – IA / CARRIL + DETALLE */}
+<motion.section
+  className="ft-section ft-ai ft-section--compact"
+  {...sectionAnim}
+  id="ai"
+>
+  <div className="ft-ai-head">
+    <div>
+      <h2>IA integrada en tu día</h2>
+      <p>Te sugiere, tú decides.</p>
+    </div>
+    <span className="ft-ai-badge">IA en beta</span>
+  </div>
+
+  {/* Carril de IA */}
+  <div className="ft-ai-rail">
+    {/* Pill 1 – Rutinas */}
+    <button
+      type="button"
+      className={
+        "ft-ai-pill" + (aiFocus === "workout" ? " active" : "")
+      }
+      onMouseEnter={() => setAiFocus("workout")}
+      onFocus={() => setAiFocus("workout")}
+      onClick={() => setAiFocus("workout")}
+    >
+      <div className="ft-ai-pill-icon">🏋️‍♂️</div>
+      <div className="ft-ai-pill-main">
+        <span className="ft-ai-pill-title">Sesiones generadas</span>
+        <span className="ft-ai-pill-sub">
+          Rutinas según tu objetivo, nivel y días.
+        </span>
+      </div>
+    </button>
+
+    {/* Pill 2 – Foto de comida */}
+    <button
+      type="button"
+      className={
+        "ft-ai-pill" + (aiFocus === "food" ? " active" : "")
+      }
+      onMouseEnter={() => setAiFocus("food")}
+      onFocus={() => setAiFocus("food")}
+      onClick={() => setAiFocus("food")}
+    >
+      <div className="ft-ai-pill-icon">📸</div>
+      <div className="ft-ai-pill-main">
+        <span className="ft-ai-pill-title">Foto de tu plato</span>
+        <span className="ft-ai-pill-sub">
+          Detectamos la comida y estimamos kcal y macros.
+        </span>
+      </div>
+    </button>
+
+    {/* Pill 3 – Adaptación */}
+    <button
+      type="button"
+      className={
+        "ft-ai-pill" + (aiFocus === "adapt" ? " active" : "")
+      }
+      onMouseEnter={() => setAiFocus("adapt")}
+      onFocus={() => setAiFocus("adapt")}
+      onClick={() => setAiFocus("adapt")}
+    >
+      <div className="ft-ai-pill-icon">🧠</div>
+      <div className="ft-ai-pill-main">
+        <span className="ft-ai-pill-title">Aprende de ti</span>
+        <span className="ft-ai-pill-sub">
+          Ajusta propuestas según lo que completas o cambias.
+        </span>
+      </div>
+    </button>
+  </div>
+
+  {/* Tarjeta que cambia según la pill activa */}
+  <div className="ft-ai-detail">
+    <h3 className="ft-ai-detail-title">
+      {aiDetails[aiFocus].title}
+    </h3>
+    <ul className="ft-ai-detail-list">
+      {aiDetails[aiFocus].bullets.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+    <p className="ft-ai-detail-note">
+      La IA te da atajos; tú revisas y confirmas antes de guardar.
+    </p>
+  </div>
+</motion.section>
 
 
         {/* SECTION 3 – PLAN */}
