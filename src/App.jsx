@@ -636,8 +636,8 @@ function App() {
           <nav className="ft-nav-links">
             <a href="#top">Inicio</a>
             <a href="#scan">Diagnóstico</a>
-            <a href="#ai">IA</a> 
             <a href="#plan">Plan</a>
+            <a href="#ai">IA</a> 
             <a href="#sim">Funcionalidades</a>
             <a href="#social">Social</a>
             <a href="#beta">Beta</a>
@@ -763,6 +763,10 @@ function App() {
           </div>
         </motion.section>
 
+
+
+        {/* SECTION 3 – PLAN */}
+        <PlanShowcase />
 {/* SECTION 3 – IA / CARRIL + DETALLE */}
 <motion.section
   className="ft-section ft-ai ft-section--compact"
@@ -852,10 +856,6 @@ function App() {
     </p>
   </div>
 </motion.section>
-
-
-        {/* SECTION 3 – PLAN */}
-        <PlanShowcase />
 
 
         {/* SECTION 4 – BLOQUE INTERACTIVO DE FEATURES */}
